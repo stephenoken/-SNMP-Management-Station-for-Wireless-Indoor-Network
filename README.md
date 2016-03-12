@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/stephenoken/-SNMP-Management-Station-for-Wireless-Indoor-Network.png?label=ready&title=Ready)](https://waffle.io/stephenoken/-SNMP-Management-Station-for-Wireless-Indoor-Network)
 # -SNMP-Management-Station-for-Wireless-Indoor-Network
 
 ## Project Dependancies
