@@ -4,6 +4,7 @@ from pyasn1.codec.ber import encoder, decoder
 from pysnmp.proto import api
 import time, bisect
 
+
 class SysDescr:
     name = (1,3,6,1,2,1,1,1,0)
     def __eq__(self, other): return self.name == other
@@ -101,12 +102,12 @@ transportDispatcher.registerRecvCbFun(cbFun)
 
 # UDP/IPv4
 transportDispatcher.registerTransport(
-    udp.domainName, udp.UdpSocketTransport().openServerMode(('localhost', 161))
+    udp.domainName, udp.UdpSocketTransport().openServerMode(('localhost', 1161))
 )
 
 # UDP/IPv6
 transportDispatcher.registerTransport(
-    udp6.domainName, udp6.Udp6SocketTransport().openServerMode(('::1', 161))
+    udp6.domainName, udp6.Udp6SocketTransport().openServerMode(('::1', 1161))
 )
 
 ## Local domain socket
