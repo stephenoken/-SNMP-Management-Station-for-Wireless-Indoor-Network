@@ -1,23 +1,19 @@
-# SET Command Generator
 from pysnmp.carrier.asynsock.dispatch import AsynsockDispatcher
-from pysnmp.carrier.asynsock.dgram import udp
+from pysnmp.carrier.asynsock.dgram import udp, udp6
 from pyasn1.codec.ber import encoder, decoder
 from pysnmp.proto import api
 from time import time
 
 # Protocol version to use
-#pMod = api.protoModules[api.protoVersion1]
-pMod = api.protoModules[api.protoVersion2c]
+pMod = api.protoModules[api.protoVersion1]
+#pMod = api.protoModules[api.protoVersion2c]
 
 # Build PDU
-reqPDU =  pMod.SetRequestPDU()
+reqPDU =  pMod.GetRequestPDU()
 pMod.apiPDU.setDefaults(reqPDU)
 pMod.apiPDU.setVarBinds(
-    reqPDU,
-    # A list of Var-Binds to SET
-    ( ('1.3.6.1.2.1.1.1.0', pMod.OctetString('1001')),
-     # ('1.3.6.1.2.1.1.3.0', pMod.TimeTicks(12))
-    )
+    reqPDU, ( ('1.3.6.1.2.1.1.1.0', pMod.Null('')),
+              ('1.3.6.1.2.1.1.3.0', pMod.Null('')) )
     )
 
 # Build message
@@ -45,7 +41,7 @@ def cbRecvFun(transportDispatcher, transportDomain, transportAddress,
                 print(errorStatus.prettyPrint())
             else:
                 for oid, val in pMod.apiPDU.getVarBinds(rspPDU):
-                    print('%s = %s' (oid.prettyPrint(), val.prettyPrint()))
+                    print('%s = %s' % (oid.prettyPrint(), val.prettyPrint()))
             transportDispatcher.jobFinished(1)
     return wholeMsg
 
@@ -62,6 +58,17 @@ transportDispatcher.registerTransport(
 # Pass message to dispatcher
 transportDispatcher.sendMessage(
     encoder.encode(reqMsg), udp.domainName, ('localhost', 1161)
+)
+transportDispatcher.jobStarted(1)
+
+## UDP/IPv6 (second copy of the same PDU will be sent)
+transportDispatcher.registerTransport(
+    udp6.domainName, udp6.Udp6SocketTransport().openClientMode()
+)
+
+# Pass message to dispatcher
+transportDispatcher.sendMessage(
+    encoder.encode(reqMsg), udp6.domainName, ('::1', 1161)
 )
 transportDispatcher.jobStarted(1)
 

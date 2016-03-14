@@ -9,7 +9,12 @@ class ThermometerHandler(SocketServer.BaseRequestHandler):
         print "{} wrote :".format(self.client_address[0])
         print self.data
         if self.data.upper() == "GET_DATA":
-            self.request.sendall(str(random.randrange(-100,100)))
+            #self.request.sendall(str(random.randrange(1,100)))
+            print self.temperatures[0]
+            self.request.send(self.temperatures[0])
+        else:
+            self.temperatures[0] = self.data
+            self.request.send(self.temperatures[0])
 
 
 if __name__ == "__main__":
