@@ -14,8 +14,8 @@ def getSensorInfo(data):
     sock.connect((HOST, PORT))
     sock.send(data)
     received = sock.recv(1024)
-    print "Sent:     {}".format(data)
-    print "Received: {}".format(received)
+    print "Sent in GET:     {}".format(data)
+    print "Received in GET: {}".format(received)
     sock.close()
     return received
 
@@ -26,10 +26,12 @@ def setSensorInfo(data):
     sock.connect((HOST, PORT))
     sock.send(data)
     received = sock.recv(1024)
-    print "Sent:     {}".format(data)
-    print "Received: {}".format(received)
+    print "Sent in SET:     {}".format(data)
+    print "Received in SET: {}".format(received)
     sock.close()
     return received
+
+
 # result = getSensorInfo("get_Data")
 # print result
 

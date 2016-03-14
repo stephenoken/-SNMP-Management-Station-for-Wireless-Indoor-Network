@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b2d5795-5cc8-47c4-93b5-6797e6d5ac3d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample_scripts/snmp_set.py" afterPath="$PROJECT_DIR$/src/sample_scripts/snmp_set.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample_scripts/manager.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample_scripts/snmp_get.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/snmp_components/agent.py" afterPath="$PROJECT_DIR$/src/snmp_components/Thermometer_agent.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sensors/thermometer.py" afterPath="$PROJECT_DIR$/src/sensors/thermometer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/snmp_components/agent.py" afterPath="$PROJECT_DIR$/src/snmp_components/agent.py" />
     </list>
     <ignored path="-SNMP-Management-Station-for-Wireless-Indoor-Network.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,13 +20,20 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$snmp_set.coverage" NAME="snmp_set Coverage Results" MODIFIED="1457970727536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sample_scripts" />
-    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$snmp_get.coverage" NAME="snmp_get Coverage Results" MODIFIED="1457970732928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sample_scripts" />
-    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$pysnmp_example.coverage" NAME="pysnmp_example Coverage Results" MODIFIED="1457797888773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$agent.coverage" NAME="agent Coverage Results" MODIFIED="1457970718073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/snmp_components" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$Heater.coverage" NAME="Heater Coverage Results" MODIFIED="1457998032415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sensors" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$Thermometer_agent.coverage" NAME="Thermometer_agent Coverage Results" MODIFIED="1457998037242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/snmp_components" />
     <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$set_cmd.coverage" NAME="set_cmd Coverage Results" MODIFIED="1457951562294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sample_scripts" />
-    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$thermometer.coverage" NAME="thermometer Coverage Results" MODIFIED="1457970708955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sensors" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$thermometer.coverage" NAME="thermometer Coverage Results" MODIFIED="1457999509691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sensors" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$heater.coverage" NAME="heater Coverage Results" MODIFIED="1457999513152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sensors" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$snmp_set.coverage" NAME="snmp_set Coverage Results" MODIFIED="1457970727536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sample_scripts" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$snmp_get.coverage" NAME="snmp_get Coverage Results" MODIFIED="1457998046040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sample_scripts" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$pysnmp_example.coverage" NAME="pysnmp_example Coverage Results" MODIFIED="1457797888773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$agent.coverage" NAME="agent Coverage Results" MODIFIED="1457984639392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/snmp_components" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$thermometer_agent.coverage" NAME="thermometer_agent Coverage Results" MODIFIED="1457999518329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/snmp_components" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$manager.coverage" NAME="manager Coverage Results" MODIFIED="1457999535773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sample_scripts" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$heater_agent.coverage" NAME="heater_agent Coverage Results" MODIFIED="1457999521261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/snmp_components" />
     <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$cmd_gen.coverage" NAME="cmd_gen Coverage Results" MODIFIED="1457910416877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/sample_scripts" />
+    <SUITE FILE_PATH="coverage/-SNMP-Management-Station-for-Wireless-Indoor-Network$Heater_agent.coverage" NAME="Heater_agent Coverage Results" MODIFIED="1457998034678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/snmp_components" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -35,45 +44,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="snmp_get.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample_scripts/snmp_get.py">
+      <file leaf-file-name="manager.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample_scripts/manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34170854">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="agent.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snmp_components/agent.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0344827">
-              <caret line="113" column="47" selection-start-line="113" selection-start-column="47" selection-end-line="113" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.5954774">
+              <caret line="54" column="65" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
               <folding>
-                <element signature="e#0#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Python27/Lib/site-packages/pyasn1-0.1.9-py2.7.egg!/pyasn1/type/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="28" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="snmp_set.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample_scripts/snmp_set.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
-              <folding>
-                <element signature="e#24#87#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,8 +60,42 @@
         <entry file="file://$PROJECT_DIR$/src/sensors/thermometer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="heater.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sensors/heater.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thermometer_agent.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/snmp_components/thermometer_agent.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="151" column="75" selection-start-line="151" selection-start-column="75" selection-end-line="151" selection-end-column="75" />
+              <folding>
+                <element signature="e#0#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="heater_agent.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/snmp_components/heater_agent.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,12 +109,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/pysnmp_example.py" />
-        <option value="$PROJECT_DIR$/src/sample_scripts/snmp_get.py" />
         <option value="$PROJECT_DIR$/src/sample_scripts/cmd_gen.py" />
         <option value="$PROJECT_DIR$/src/sample_scripts/set_cmd.py" />
         <option value="$PROJECT_DIR$/src/sample_scripts/snmp_set.py" />
-        <option value="$PROJECT_DIR$/src/sensors/thermometer.py" />
         <option value="$PROJECT_DIR$/src/snmp_components/agent.py" />
+        <option value="$PROJECT_DIR$/src/snmp_components/Thermometer_agent.py" />
+        <option value="$PROJECT_DIR$/src/snmp_components/Heater_agent.py" />
+        <option value="$PROJECT_DIR$/src/sample_scripts/snmp_get.py" />
+        <option value="$PROJECT_DIR$/src/sensors/Heater.py" />
+        <option value="$PROJECT_DIR$/src/sensors/thermometer.py" />
+        <option value="$PROJECT_DIR$/src/sensors/heater.py" />
+        <option value="$PROJECT_DIR$/src/sample_scripts/manager.py" />
       </list>
     </option>
   </component>
@@ -228,79 +244,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
-  <component name="RunManager" selected="Python.snmp_get">
-    <configuration default="false" name="snmp_get" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sample_scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="-SNMP-Management-Station-for-Wireless-Indoor-Network" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sample_scripts/snmp_get.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="agent" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/snmp_components" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="-SNMP-Management-Station-for-Wireless-Indoor-Network" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/snmp_components/agent.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="snmp_set" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sample_scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="-SNMP-Management-Station-for-Wireless-Indoor-Network" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sample_scripts/snmp_set.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="set_cmd" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sample_scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="-SNMP-Management-Station-for-Wireless-Indoor-Network" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Nina\-SNMP-Management-Station-for-Wireless-Indoor-Network\src\sample_scripts\snmp_set.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.manager">
     <configuration default="false" name="thermometer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -315,6 +259,78 @@
       <module name="-SNMP-Management-Station-for-Wireless-Indoor-Network" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sensors/thermometer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="heater" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sensors" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="-SNMP-Management-Station-for-Wireless-Indoor-Network" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sensors/heater.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="thermometer_agent" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/snmp_components" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="-SNMP-Management-Station-for-Wireless-Indoor-Network" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/snmp_components/thermometer_agent.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="heater_agent" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/snmp_components" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="-SNMP-Management-Station-for-Wireless-Indoor-Network" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/snmp_components/heater_agent.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sample_scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="-SNMP-Management-Station-for-Wireless-Indoor-Network" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sample_scripts/manager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -512,20 +528,39 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="5">
+    <configuration default="false" name="snmp_get" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sample_scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="-SNMP-Management-Station-for-Wireless-Indoor-Network" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Nina\-SNMP-Management-Station-for-Wireless-Indoor-Network\src\sample_scripts\manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.snmp_get" />
-      <item index="1" class="java.lang.String" itemvalue="Python.agent" />
-      <item index="2" class="java.lang.String" itemvalue="Python.snmp_set" />
-      <item index="3" class="java.lang.String" itemvalue="Python.set_cmd" />
-      <item index="4" class="java.lang.String" itemvalue="Python.thermometer" />
+      <item index="1" class="java.lang.String" itemvalue="Python.thermometer" />
+      <item index="2" class="java.lang.String" itemvalue="Python.heater" />
+      <item index="3" class="java.lang.String" itemvalue="Python.thermometer_agent" />
+      <item index="4" class="java.lang.String" itemvalue="Python.heater_agent" />
+      <item index="5" class="java.lang.String" itemvalue="Python.manager" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.snmp_get" />
-        <item index="1" class="java.lang.String" itemvalue="Python.snmp_set" />
-        <item index="2" class="java.lang.String" itemvalue="Python.agent" />
-        <item index="3" class="java.lang.String" itemvalue="Python.thermometer" />
-        <item index="4" class="java.lang.String" itemvalue="Python.set_cmd" />
+        <item index="0" class="java.lang.String" itemvalue="Python.manager" />
+        <item index="1" class="java.lang.String" itemvalue="Python.heater_agent" />
+        <item index="2" class="java.lang.String" itemvalue="Python.thermometer_agent" />
+        <item index="3" class="java.lang.String" itemvalue="Python.heater" />
+        <item index="4" class="java.lang.String" itemvalue="Python.thermometer" />
       </list>
     </recent_temporary>
   </component>
@@ -544,9 +579,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18960468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -587,11 +622,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample_scripts/snmp_get.py">
+    <entry file="file://$PROJECT_DIR$/src/sample_scripts/manager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -610,12 +647,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#87#0" expanded="true" />
+            <element signature="e#24#87#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snmp_components/agent.py">
+    <entry file="file://$PROJECT_DIR$/src/snmp_components/thermometer_agent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
@@ -633,11 +670,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample_scripts/snmp_get.py">
+    <entry file="file://$PROJECT_DIR$/src/sample_scripts/manager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -656,12 +695,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="e#24#87#0" expanded="true" />
+            <element signature="e#24#87#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snmp_components/agent.py">
+    <entry file="file://$PROJECT_DIR$/src/snmp_components/thermometer_agent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -671,11 +710,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample_scripts/snmp_get.py">
+    <entry file="file://$PROJECT_DIR$/src/sample_scripts/manager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -714,16 +755,16 @@
     </entry>
     <entry file="jar://C:/Python27/Lib/site-packages/pyasn1-0.1.9-py2.7.egg!/pyasn1/type/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-8.316583">
           <caret line="45" column="28" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sensors/thermometer.py">
+    <entry file="file://C:/Python27/Lib/ssl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="724" column="33" selection-start-line="724" selection-start-column="26" selection-end-line="724" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -731,28 +772,56 @@
     <entry file="file://$PROJECT_DIR$/src/sample_scripts/snmp_set.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="21" />
           <folding>
-            <element signature="e#24#87#0" expanded="true" />
+            <element signature="e#24#87#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snmp_components/agent.py">
+    <entry file="file://$PROJECT_DIR$/src/sensors/thermometer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0344827">
-          <caret line="113" column="47" selection-start-line="113" selection-start-column="47" selection-end-line="113" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sensors/heater.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snmp_components/thermometer_agent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="151" column="75" selection-start-line="151" selection-start-column="75" selection-end-line="151" selection-end-column="75" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample_scripts/snmp_get.py">
+    <entry file="file://$PROJECT_DIR$/src/snmp_components/heater_agent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34170854">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample_scripts/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5954774">
+          <caret line="54" column="65" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
