@@ -1,6 +1,8 @@
 import SocketServer
 import socket
 import random
+import get_ip_address
+
 class ThermometerHandler(SocketServer.BaseRequestHandler):
     # Collection of temperatures
     #temperatures = ["11","18","20","5","70"]
@@ -17,8 +19,8 @@ class ThermometerHandler(SocketServer.BaseRequestHandler):
 
 
 if __name__ == "__main__":
-    HOST, PORT = "localhost", 8000
+    HOST, PORT = get_ip_address.get_lan_ip(), 8000
 
     server = SocketServer.TCPServer((HOST,PORT),ThermometerHandler)
-
+    print("Server running http://{0}:{1}".format(HOST,PORT))
     server.serve_forever()

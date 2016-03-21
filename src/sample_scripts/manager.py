@@ -182,6 +182,3 @@ if __name__ == "__main__":
     l = task.LoopingCall(pollFn)
     l.start(timeout) # call every sixty seconds
     reactor.run()
-
-
-
