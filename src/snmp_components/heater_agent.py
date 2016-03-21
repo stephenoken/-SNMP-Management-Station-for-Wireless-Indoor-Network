@@ -6,22 +6,22 @@ import time, bisect
 
 import socket
 import sys
-
+import get_ip_address
 # Todo: Return from sensor values
 def getHeaterInfo(data):
-    HOST,PORT = "localhost", 8001
+    HOST, PORT = get_ip_address.get_lan_ip(), 8000
     sock = socket.socket()
     sock.connect((HOST, PORT))
     sock.send(data)
     received = sock.recv(1024)
-    print "Sent in GET:     {}".format(data)
+    print "Sent in GET: {}".format(data)
     print "Received in GET: {}".format(received)
     sock.close()
     return received
 
 # Todo: Return from sensor values
 def setHeaterInfo(data):
-    HOST,PORT = "localhost", 8001
+    HOST,PORT = get_ip_address.get_lan_ip(), 8000
     sock = socket.socket()
     sock.connect((HOST, PORT))
     sock.send(data)
@@ -71,8 +71,8 @@ for mibVar in mibInstr:
     mibInstrIdx[mibVar.name] = mibVar
 
 def cbFun(transportDispatcher, transportDomain, transportAddress, wholeMsg):
-    print("wholeMsg : %s" % wholeMsg)
-    print wholeMsg
+    # print("wholeMsg : %s" % wholeMsg)
+    # print wholeMsg
     while wholeMsg:
         msgVer = api.decodeMessageVersion(wholeMsg)
         if msgVer in api.protoModules:
@@ -139,12 +139,12 @@ transportDispatcher.registerRecvCbFun(cbFun)
 
 # UDP/IPv4
 transportDispatcher.registerTransport(
-    udp.domainName, udp.UdpSocketTransport().openServerMode(('localhost', 1162))
+    udp.domainName, udp.UdpSocketTransport().openServerMode((get_ip_address.get_lan_ip(), 1161))
 )
 
 # UDP/IPv6
 transportDispatcher.registerTransport(
-    udp6.domainName, udp6.Udp6SocketTransport().openServerMode(('::1', 1162))
+    udp6.domainName, udp6.Udp6SocketTransport().openServerMode(('::1', 1161))
 )
 
 ## Local domain socket
