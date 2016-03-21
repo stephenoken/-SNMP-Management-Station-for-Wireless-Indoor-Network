@@ -1,10 +1,13 @@
 from pysnmp.hlapi import *
 
 from pysnmp.carrier.asynsock.dispatch import AsynsockDispatcher
+from pysnmp.carrier.asyncore.dispatch import AsyncoreDispatcher
 from pysnmp.carrier.asynsock.dgram import udp
+from pysnmp.carrier.asyncore.dgram import udp, udp6, unix
 from pyasn1.codec.ber import encoder, decoder
 from pysnmp.proto import api
 from time import time
+import threading
 
 from twisted.internet import task
 from twisted.internet import reactor
@@ -14,7 +17,18 @@ class test:
     def __init__(self):
         print "init"
 
-def testFn():
+class ServerThread (threading.Thread):
+    def __init__(self, threadID, name, counter):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.counter = counter
+    def run(self):
+        print "Starting thread 2" + self.name
+        openServer()
+        print "Exiting thread 2" + self.name
+
+def pollFn():
     #Check the heater status
     errorIndication, errorStatus, errorIndex, varBinds = next(
         getCmd(SnmpEngine(),
@@ -132,10 +146,42 @@ def testFn():
             else:
                 print "value greater than 10"
 
-if __name__ == "__main__":
-    timeout = 60.0 # Sixty seconds
-    l = task.LoopingCall(testFn)
-    l.start(timeout) # call every sixty seconds
+def testNewFn(transportDispatcher, transportDomain, transportAddress, wholeMsg):
+    print "In test new fn"
 
+def openServer():
+    print "In Open server mode"
+
+
+    transportDispatcher = AsyncoreDispatcher()
+    transportDispatcher.registerRecvCbFun(testNewFn)
+    # UDP/IPv4
+    transportDispatcher.registerTransport(
+    udp.domainName, udp.UdpSocketTransport().openServerMode(('localhost', 1171))
+    )
+
+    # UDP/IPv6
+    transportDispatcher.registerTransport(
+    udp6.domainName, udp6.Udp6SocketTransport().openServerMode(('::1', 1171))
+    )
+
+    transportDispatcher.jobStarted(1)
+    print "job started"
+    transportDispatcher.runDispatcher()
+
+    transportDispatcher.closeDispatcher()
+
+if __name__ == "__main__":
+
+    serverThread = ServerThread(1, "Thread-Server", 1)
+
+    # Start the server thread
+    serverThread.start()
+
+    timeout = 60.0 # Sixty seconds
+    l = task.LoopingCall(pollFn)
+    l.start(timeout) # call every sixty seconds
     reactor.run()
+
+
 
