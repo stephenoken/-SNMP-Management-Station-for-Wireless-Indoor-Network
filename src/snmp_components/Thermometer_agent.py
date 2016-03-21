@@ -14,15 +14,28 @@ def getSensorInfo(data):
     sock.connect((HOST, PORT))
     sock.send(data)
     received = sock.recv(1024)
-    print "Sent:     {}".format(data)
-    print "Received: {}".format(received)
+    print "Sent in GET:     {}".format(data)
+    print "Received in GET: {}".format(received)
     sock.close()
     return received
+
+# Todo: Return from sensor values
+def setSensorInfo(data):
+    HOST,PORT = "localhost", 8000
+    sock = socket.socket()
+    sock.connect((HOST, PORT))
+    sock.send(data)
+    received = sock.recv(1024)
+    print "Sent in SET:     {}".format(data)
+    print "Received in SET: {}".format(received)
+    sock.close()
+    return received
+
 
 # result = getSensorInfo("get_Data")
 # print result
 
-class GetSensorData:
+class SysDescr:
     name = (1,3,6,1,2,1,1,1,0)
     def __eq__(self, other): return self.name == other
     def __ne__(self, other): return self.name != other
@@ -32,7 +45,7 @@ class GetSensorData:
     def __ge__(self, other): return self.name >= other
     def __call__(self, protoVer):
         return api.protoModules[protoVer].OctetString(
-            getSensorInfo("get_Data")
+            getSensorInfo("get_data")
             )
 
 class Uptime:
@@ -50,7 +63,7 @@ class Uptime:
             )
 
 mibInstr = (
-    GetSensorData(), Uptime() # sorted by object name
+    SysDescr(), Uptime() # sorted by object name
     )
 
 mibInstrIdx = {}
@@ -58,6 +71,8 @@ for mibVar in mibInstr:
     mibInstrIdx[mibVar.name] = mibVar
 
 def cbFun(transportDispatcher, transportDomain, transportAddress, wholeMsg):
+    print("wholeMsg : %s" % wholeMsg)
+    print wholeMsg
     while wholeMsg:
         msgVer = api.decodeMessageVersion(wholeMsg)
         if msgVer in api.protoModules:
@@ -74,6 +89,7 @@ def cbFun(transportDispatcher, transportDomain, transportAddress, wholeMsg):
         varBinds = []; pendingErrors = []
         errorIndex = 0
         # GETNEXT PDU
+
         if reqPDU.isSameTypeWith(pMod.GetNextRequestPDU()):
             # Produce response var-binds
             for oid, val in pMod.apiPDU.getVarBinds(reqPDU):
@@ -102,8 +118,12 @@ def cbFun(transportDispatcher, transportDomain, transportAddress, wholeMsg):
                         (pMod.apiPDU.setNoSuchInstanceError, errorIndex)
                         )
                     break
+        elif reqPDU.isSameTypeWith(pMod.SetRequestPDU()):
+            for oid, val in pMod.apiPDU.getVarBinds(reqPDU):
+                setSensorInfo(str(val))
         else:
             # Report unsupported request type
+            print "NO MATCHING PDU FOUND *******"
             pMod.apiPDU.setErrorStatus(rspPDU, 'genErr')
         pMod.apiPDU.setVarBinds(rspPDU, varBinds)
         # Commit possible error indices to response PDU
