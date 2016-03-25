@@ -21,10 +21,10 @@ def myNetwork():
     s1 = net.addSwitch('s1', cls=OVSKernelSwitch, failMode='standalone')
 
     info( '*** Add hosts\n')
-    h3 = net.addHost('h3', cls=Host, ip='10.0.0.3', defaultRoute=None)
-    h4 = net.addHost('h4', cls=Host, ip='10.0.0.4', defaultRoute=None)
     h1 = net.addHost('h1', cls=Host, ip='10.0.0.1', defaultRoute=None)
     h2 = net.addHost('h2', cls=Host, ip='10.0.0.2', defaultRoute=None)
+    h3 = net.addHost('h3', cls=Host, ip='10.0.0.3', defaultRoute=None)
+    h4 = net.addHost('h4', cls=Host, ip='10.0.0.4', defaultRoute=None)
 
     info( '*** Add links\n')
     net.addLink(s1, h4)
