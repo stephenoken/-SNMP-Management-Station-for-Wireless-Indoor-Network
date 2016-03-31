@@ -10,6 +10,7 @@ import get_ip_address
 # Todo: Return from sensor values
 def getHeaterInfo(data):
     HOST, PORT = get_ip_address.get_lan_ip(), 8000
+    print HOST
     sock = socket.socket()
     sock.connect((HOST, PORT))
     sock.send(data)
