@@ -135,7 +135,7 @@ def pollFn():
 
                 # Pass message to dispatcher
                 transportDispatcher.sendMessage(
-                    encoder.encode(reqMsg), udp.domainName, ('localhost', 1162)
+                    encoder.encode(reqMsg), udp.domainName, ('10.0.0.1', 1161)
                 )
                 transportDispatcher.jobStarted(1)
 
