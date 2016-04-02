@@ -221,9 +221,9 @@ def openServer():
     )
 
     # UDP/IPv6
-    transportDispatcher.registerTransport(
-    udp6.domainName, udp6.Udp6SocketTransport().openServerMode(('::1', 1171))
-    )
+    # transportDispatcher.registerTransport(
+    # udp6.domainName, udp6.Udp6SocketTransport().openServerMode(('::1', 1171))
+    # )
 
     transportDispatcher.jobStarted(1)
     print "job started"
