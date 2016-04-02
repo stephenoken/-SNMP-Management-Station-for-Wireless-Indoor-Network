@@ -143,10 +143,10 @@ transportDispatcher.registerTransport(
     udp.domainName, udp.UdpSocketTransport().openServerMode(('10.0.0.1', 1161))
 )
 
-# UDP/IPv6
-transportDispatcher.registerTransport(
-    udp6.domainName, udp6.Udp6SocketTransport().openServerMode(('::1', 1161))
-)
+# # UDP/IPv6
+# transportDispatcher.registerTransport(
+#     udp6.domainName, udp6.Udp6SocketTransport().openServerMode(('::1', 1161))
+# )
 
 ## Local domain socket
 #transportDispatcher.registerTransport(
