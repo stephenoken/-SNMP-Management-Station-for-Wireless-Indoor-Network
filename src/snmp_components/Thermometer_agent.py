@@ -9,7 +9,7 @@ import sys
 
 # Todo: Return from sensor values
 def getSensorInfo(data):
-    HOST,PORT = "localhost", 8000
+    HOST,PORT = get_ip_address.get_lan_ip(), 8000
     sock = socket.socket()
     sock.connect((HOST, PORT))
     sock.send(data)
@@ -21,7 +21,7 @@ def getSensorInfo(data):
 
 # Todo: Return from sensor values
 def setSensorInfo(data):
-    HOST,PORT = "localhost", 8000
+    HOST,PORT = get_ip_address.get_lan_ip(), 8000
     sock = socket.socket()
     sock.connect((HOST, PORT))
     sock.send(data)
