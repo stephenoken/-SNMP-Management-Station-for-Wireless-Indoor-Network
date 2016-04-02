@@ -140,7 +140,7 @@ transportDispatcher.registerRecvCbFun(cbFun)
 
 # UDP/IPv4
 transportDispatcher.registerTransport(
-    udp.domainName, udp.UdpSocketTransport().openServerMode((get_ip_address.get_lan_ip(), 1161))
+    udp.domainName, udp.UdpSocketTransport().openServerMode(('10.0.0.1', 1161))
 )
 
 # UDP/IPv6

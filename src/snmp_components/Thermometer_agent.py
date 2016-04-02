@@ -139,7 +139,7 @@ transportDispatcher.registerRecvCbFun(cbFun)
 
 # UDP/IPv4
 transportDispatcher.registerTransport(
-    udp.domainName, udp.UdpSocketTransport().openServerMode(('localhost', 1161))
+    udp.domainName, udp.UdpSocketTransport().openServerMode(('10.0.0.2', 1161))
 )
 
 # UDP/IPv6
