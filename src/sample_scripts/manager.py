@@ -12,10 +12,19 @@ import threading
 from twisted.internet import task
 from twisted.internet import reactor
 
-
-class test:
-    def __init__(self):
-        print "init"
+lights = ["OFF"]
+class SysDescr:
+    name = (1,3,6,1,1,2,3,4,1)
+    def __eq__(self, other): return self.name == other
+    def __ne__(self, other): return self.name != other
+    def __lt__(self, other): return self.name < other
+    def __le__(self, other): return self.name <= other
+    def __gt__(self, other): return self.name > other
+    def __ge__(self, other): return self.name >= other
+    def __call__(self, protoVer):
+        return api.protoModules[protoVer].OctetString(
+            "Test"
+            )
 
 class ServerThread (threading.Thread):
     def __init__(self, threadID, name, counter):
@@ -146,15 +155,66 @@ def pollFn():
             else:
                 print "value greater than 10"
 
-def testNewFn(transportDispatcher, transportDomain, transportAddress, wholeMsg):
-    print "In test new fn"
+def newFn(transportDispatcher, transportDomain, transportAddress, wholeMsg):
+    print "Lights status:"
+    print lights[0]
+    while wholeMsg:
+        msgVer = int(api.decodeMessageVersion(wholeMsg))
+        if msgVer in api.protoModules:
+            pMod = api.protoModules[msgVer]
+        else:
+            print('Unsupported SNMP version %s' % msgVer)
+            return
+        reqMsg, wholeMsg = decoder.decode(
+            wholeMsg, asn1Spec=pMod.Message(),
+            )
+        """
+        print('Notification message from %s:%s: %s ' % (
+            transportDomain, transportAddress, wholeMsg
+            )
+        )
+        """
+        reqPDU = pMod.apiMessage.getPDU(reqMsg)
+        if reqPDU.isSameTypeWith(pMod.TrapPDU()):
+            if msgVer == api.protoVersion1:
+                """
+                print('Enterprise: %s' % (
+                    pMod.apiTrapPDU.getEnterprise(reqPDU).prettyPrint()
+                    )
+                )
+                print('Agent Address: %s' % (
+                    pMod.apiTrapPDU.getAgentAddr(reqPDU).prettyPrint()
+                    )
+                )
+                print('Generic Trap: %s' % (
+                    pMod.apiTrapPDU.getGenericTrap(reqPDU).prettyPrint()
+                    )
+                )
+                print('Specific Trap: %s' % (
+                    pMod.apiTrapPDU.getSpecificTrap(reqPDU).prettyPrint()
+                    )
+                )
+                print('Uptime: %s' % (
+                    pMod.apiTrapPDU.getTimeStamp(reqPDU).prettyPrint()
+                    )
+                )
+                """
+                varBinds = pMod.apiTrapPDU.getVarBindList(reqPDU)
+            else:
+                varBinds = pMod.apiPDU.getVarBindList(reqPDU)
+            for oid, val in varBinds:
+                #print('%s = %s' % (oid.prettyPrint(), val.prettyPrint()))
+                print "RECEIVED a TRAP Message from Light Agent :"
+                lights[0] = (((str(val).split("OctetString('"))[1]).split("')))"))[0]
+                print (((str(val).split("OctetString('"))[1]).split("')))"))[0]
+    return wholeMsg
+
 
 def openServer():
     print "In Open server mode"
 
-
     transportDispatcher = AsyncoreDispatcher()
-    transportDispatcher.registerRecvCbFun(testNewFn)
+    transportDispatcher.registerRecvCbFun(newFn)
     # UDP/IPv4
     transportDispatcher.registerTransport(
     udp.domainName, udp.UdpSocketTransport().openServerMode(('localhost', 1171))
@@ -178,7 +238,7 @@ if __name__ == "__main__":
     # Start the server thread
     serverThread.start()
 
-    timeout = 60.0 # Sixty seconds
+    timeout = 12.0 # Sixty seconds
     l = task.LoopingCall(pollFn)
     l.start(timeout) # call every sixty seconds
     reactor.run()
