@@ -18,3 +18,14 @@
 
 ## Useful Materials
 - <a href="http://gzsl.lzu.edu.cn/pysnmp/pysnmp-tutorial.html">PYSNMP Tutorial</a>
+
+##Order of Execution
+
+
+- Thermometer
+- Thermometer Agent
+- Heater
+- Heater Agent
+- manager
+- Lights Agent
+
