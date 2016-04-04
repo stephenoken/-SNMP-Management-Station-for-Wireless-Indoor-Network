@@ -72,8 +72,6 @@ for mibVar in mibInstr:
     mibInstrIdx[mibVar.name] = mibVar
 
 def cbFun(transportDispatcher, transportDomain, transportAddress, wholeMsg):
-    print("wholeMsg : %s" % wholeMsg)
-    print wholeMsg
     while wholeMsg:
         msgVer = api.decodeMessageVersion(wholeMsg)
         if msgVer in api.protoModules:

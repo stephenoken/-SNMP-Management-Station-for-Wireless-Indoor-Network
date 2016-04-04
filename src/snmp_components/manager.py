@@ -33,7 +33,7 @@ class ServerThread (threading.Thread):
         self.name = name
         self.counter = counter
     def run(self):
-        print "Starting server thread" + self.name
+        print "Starting server thread " + self.name
         openServer()
         print "Exiting thread 2" + self.name
 
@@ -231,7 +231,7 @@ def openServer():
 
 if __name__ == "__main__":
 
-    serverThread = ServerThread(1, "Thread-Server", 1)
+    serverThread = ServerThread(1, "Manager", 1)
 
     # Start the server thread
     serverThread.start()
