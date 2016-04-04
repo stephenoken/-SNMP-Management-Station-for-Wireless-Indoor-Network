@@ -67,16 +67,16 @@ def trapFn():
         udp.domainName, udp.UdpSocketTransport().openClientMode()
     )
     transportDispatcher.sendMessage(
-        encoder.encode(trapMsg), udp.domainName, ('localhost', 1171)
+        encoder.encode(trapMsg), udp.domainName, ('10.0.0.3', 1171)
     )
 
     # UDP/IPv6
-    transportDispatcher.registerTransport(
-        udp6.domainName, udp6.Udp6SocketTransport().openClientMode()
-    )
-    transportDispatcher.sendMessage(
-        encoder.encode(trapMsg), udp6.domainName, ('::1', 162)
-    )
+    # transportDispatcher.registerTransport(
+    #     udp6.domainName, udp6.Udp6SocketTransport().openClientMode()
+    # )
+    # transportDispatcher.sendMessage(
+    #     encoder.encode(trapMsg), udp6.domainName, ('::1', 162)
+    # )
 
     print 'out'
     #transportDispatcher.jobStarted(1)
