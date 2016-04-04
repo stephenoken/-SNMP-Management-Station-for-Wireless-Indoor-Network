@@ -32,7 +32,7 @@ pMod = api.protoModules[api.protoVersion1]
 trapPDU =  pMod.TrapPDU()
 pMod.apiTrapPDU.setDefaults(trapPDU)
 def trapFn():
-    print 'IN'
+    print "Sending trap to manager"
     # Protocol version to use
 
     #pMod = api.protoModules[api.protoVersion2c]
@@ -78,7 +78,6 @@ def trapFn():
     #     encoder.encode(trapMsg), udp6.domainName, ('::1', 162)
     # )
 
-    print 'out'
     #transportDispatcher.jobStarted(1)
     ## Local domain socket
     #transportDispatcher.registerTransport(
@@ -93,8 +92,6 @@ def trapFn():
 
     transportDispatcher.closeDispatcher()
 if __name__ == "__main__":
-
-    print 'in main'
     timeout = 10.0 # Sixty seconds
     l2 = task.LoopingCall(trapFn)
     l2.start(timeout) # call every sixty seconds

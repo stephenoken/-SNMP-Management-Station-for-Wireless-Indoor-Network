@@ -22,5 +22,5 @@ if __name__ == "__main__":
     HOST, PORT = get_ip_address.get_lan_ip(), 8000
 
     server = SocketServer.TCPServer((HOST,PORT),ThermometerHandler)
-    print("Server running http://{0}:{1}".format(HOST,PORT))
+    print("Temperature sensor running http://{0}:{1}".format(HOST,PORT))
     server.serve_forever()

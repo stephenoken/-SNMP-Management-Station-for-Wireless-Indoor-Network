@@ -15,8 +15,8 @@ def getSensorInfo(data):
     sock.connect((HOST, PORT))
     sock.send(data)
     received = sock.recv(1024)
-    print "Sent in GET:     {}".format(data)
-    print "Received in GET: {}".format(received)
+    print "Sent to temperature sensor :     {}".format(data)
+    print "Received from sensor : {}".format(received)
     sock.close()
     return received
 

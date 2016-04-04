@@ -33,7 +33,7 @@ class ServerThread (threading.Thread):
         self.name = name
         self.counter = counter
     def run(self):
-        print "Starting thread 2" + self.name
+        print "Starting server thread" + self.name
         openServer()
         print "Exiting thread 2" + self.name
 
@@ -153,10 +153,10 @@ def pollFn():
 
                 transportDispatcher.closeDispatcher()
             else:
-                print "value greater than 10"
+                print "Temperature greater than 10"
 
 def newFn(transportDispatcher, transportDomain, transportAddress, wholeMsg):
-    print "Lights status:"
+    print "Current Lights status:"
     print lights[0]
     while wholeMsg:
         msgVer = int(api.decodeMessageVersion(wholeMsg))
@@ -211,7 +211,6 @@ def newFn(transportDispatcher, transportDomain, transportAddress, wholeMsg):
 
 
 def openServer():
-    print "In Open server mode"
 
     transportDispatcher = AsyncoreDispatcher()
     transportDispatcher.registerRecvCbFun(newFn)
@@ -226,7 +225,6 @@ def openServer():
     # )
 
     transportDispatcher.jobStarted(1)
-    print "job started"
     transportDispatcher.runDispatcher()
 
     transportDispatcher.closeDispatcher()
