@@ -50,7 +50,7 @@ def myNetwork():
 def printInfo(hosts):
     for h in hosts:
         print "Host", h.name, "has IP address", h.IP()
-    print("Run heater agent on h1 and temperature agent h2")
+    print("Run: \nheater agent on h1 \ntemperature agent h2 \n manager on h3 \nlight_agent h4")
 
 if __name__ == '__main__':
     setLogLevel( 'info' )
